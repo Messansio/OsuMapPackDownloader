@@ -4,7 +4,7 @@ class OsuMapPackDownloader {
         this.BASE_URL = 'https://packs.ppy.sh/S';
         this.DOWNLOAD_DELAY = 1200; // Increased to be more gentle on the server
         this.IFRAME_REMOVAL_DELAY = 5000;
-        this.MAX_CONCURRENT_DOWNLOADS = 3; // Limit concurrent downloads
+        this.MAX_CONCURRENT_DOWNLOADS = 1; // Always set to 1, no longer configurable
         
         // State variables
         this.totalDownloads = 0;
@@ -23,7 +23,6 @@ class OsuMapPackDownloader {
         this.downloadStatusDiv = document.getElementById('downloadStatus');
         this.olderPacksCheckbox = document.getElementById('olderPacks');
         this.delayInput = document.getElementById('downloadDelay');
-        this.maxConcurrentInput = document.getElementById('maxConcurrent');
         
         // Load settings from localStorage
         this.loadSettings();
@@ -41,14 +40,7 @@ class OsuMapPackDownloader {
         if (savedDelay) {
             this.DOWNLOAD_DELAY = parseInt(savedDelay, 10);
             if (this.delayInput) this.delayInput.value = this.DOWNLOAD_DELAY;
-        }
-        
-        const savedConcurrent = localStorage.getItem('maxConcurrent');
-        if (savedConcurrent) {
-            this.MAX_CONCURRENT_DOWNLOADS = parseInt(savedConcurrent, 10);
-            if (this.maxConcurrentInput) this.maxConcurrentInput.value = this.MAX_CONCURRENT_DOWNLOADS;
-        }
-        
+        }        
         // Restore last used pack numbers
         const lastStart = localStorage.getItem('lastStartNumber');
         const lastEnd = localStorage.getItem('lastEndNumber');
@@ -61,7 +53,6 @@ class OsuMapPackDownloader {
      */
     saveSettings() {
         localStorage.setItem('downloadDelay', this.DOWNLOAD_DELAY);
-        localStorage.setItem('maxConcurrent', this.MAX_CONCURRENT_DOWNLOADS);
         localStorage.setItem('lastStartNumber', this.startInput.value);
         localStorage.setItem('lastEndNumber', this.endInput.value);
     }
@@ -109,13 +100,6 @@ class OsuMapPackDownloader {
         if (this.delayInput) {
             this.delayInput.addEventListener('change', () => {
                 this.DOWNLOAD_DELAY = parseInt(this.delayInput.value, 10);
-                this.saveSettings();
-            });
-        }
-        
-        if (this.maxConcurrentInput) {
-            this.maxConcurrentInput.addEventListener('change', () => {
-                this.MAX_CONCURRENT_DOWNLOADS = parseInt(this.maxConcurrentInput.value, 10);
                 this.saveSettings();
             });
         }
