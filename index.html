@@ -9,20 +9,54 @@
 <body>
     <div class="container">
         <h1>Osu! Map Pack Downloader</h1>
+        
+        <div class="disclaimer-box">
+            <p>This tool is for educational purposes and personal use only. Please ensure you:</p>
+            <ul>
+                <li>Have a valid osu! account</li>
+                <li>Only download content you're allowed to access</li>
+                <li>Use downloaded content according to osu!'s terms of service</li>
+            </ul>
+        </div>
+        
         <div class="form-group">
             <label for="startNumber">Start Pack Number:</label>
-            <input type="number" id="startNumber" min="1" placeholder="e.g., 1589">
+            <input type="number" id="startNumber" min="1" placeholder="e.g., 1">
         </div>
         <div class="form-group">
             <label for="endNumber">End Pack Number:</label>
-            <input type="number" id="endNumber" min="1" placeholder="e.g., 1595">
+            <input type="number" id="endNumber" min="1" placeholder="e.g., 5">
         </div>
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="olderPacks" name="olderPacks">
+            <label for="olderPacks">Use older pack format (.7z files, for packs < ~1347)</label>
+        </div>
+        
+        <div class="advanced-settings">
+            <h3>Advanced Settings</h3>
+            <div class="form-group">
+                <label for="downloadDelay">Download Delay (ms):</label>
+                <input type="number" id="downloadDelay" min="500" value="1200">
+                <small>Higher values are gentler on the server. Recommended: 1000-2000ms</small>
+            </div>
+            <div class="form-group">
+                <label for="maxConcurrent">Maximum Concurrent Downloads:</label>
+                <input type="number" id="maxConcurrent" min="1" max="5" value="3">
+                <small>Lower values are gentler on the server. Recommended: 1-3</small>
+            </div>
+        </div>
+        
         <button id="downloadBtn">Download Map Packs</button>
         <div class="progress-container">
             <div id="progressBar" class="progress-bar"></div>
             <div id="progressText" class="progress-text">0%</div>
         </div>
         <div id="downloadStatus" class="download-status"></div>
+        
+        <footer>
+            <p>This is an unofficial tool and not affiliated with osu! or ppy Pty Ltd.</p>
+            <p>Please use responsibly and respect the <a href="https://osu.ppy.sh/legal/terms" target="_blank">osu! terms of service</a>.</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>

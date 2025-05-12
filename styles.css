@@ -181,3 +181,63 @@ button:disabled {
 .download-status::-webkit-scrollbar-thumb:hover {
     background: #888;
 }
+
+.disclaimer-box {
+    background-color: #2e1a22;
+    border-left: 3px solid #ff66aa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.disclaimer-box p {
+    margin-bottom: 8px;
+}
+
+.disclaimer-box ul {
+    padding-left: 20px;
+}
+
+.disclaimer-box li {
+    margin-bottom: 5px;
+}
+
+.advanced-settings {
+    background-color: #252525;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.advanced-settings h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #b3b3b3;
+    font-size: 1em;
+}
+
+.advanced-settings small {
+    display: block;
+    color: #888888;
+    margin-top: 5px;
+    font-size: 0.8em;
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+    color: #777;
+    text-align: center;
+}
+
+footer a {
+    color: #ff66aa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
