@@ -1,4 +1,3 @@
-Osu! Map Pack Downloader
 Hello everyone! 👋
 
 I'm known online as Jerry or mess4na.
