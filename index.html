@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osu! Map Pack Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Osu! Map Pack Downloader</h1>
+        <div class="form-group">
+            <label for="startNumber">Start Pack Number:</label>
+            <input type="number" id="startNumber" min="1" placeholder="e.g., 1589">
+        </div>
+        <div class="form-group">
+            <label for="endNumber">End Pack Number:</label>
+            <input type="number" id="endNumber" min="1" placeholder="e.g., 1595">
+        </div>
+        <button id="downloadBtn">Download Map Packs</button>
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+            <div id="progressText" class="progress-text">0%</div>
+        </div>
+        <div id="downloadStatus" class="download-status"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #ff66aa;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 102, 170, 0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #b3b3b3;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff66aa;
+    box-shadow: 0 0 5px rgba(255, 102, 170, 0.5);
+}
+
+button {
+    background-color: #ff66aa;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e64c8a;
+    box-shadow: 0 0 8px rgba(255, 102, 170, 0.6);
+}
+
+button:disabled {
+    background-color: #444444;
+    color: #777777;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.progress-container {
+    margin-top: 20px;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #ff66aa;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
+    animation: progress-animation 1s linear infinite;
+}
+
+@keyframes progress-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 1rem 0; }
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #e0e0e0;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.download-status {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #252525;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.status-item {
+    padding: 8px 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+.status-success {
+    background-color: #1a2e22;
+    border-left: 3px solid #00cc66;
+    color: #8ee6b7;
+}
+
+.status-error {
+    background-color: #2e1a1a;
+    border-left: 3px solid #ff3333;
+    color: #ff9999;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    accent-color: #ff66aa;
+    height: 16px;
+    width: 16px;
+}
+
+.checkbox-group label {
+    display: inline;
+    margin-bottom: 0;
+}
+
+/* Custom scrollbar for download status */
+.download-status::-webkit-scrollbar {
+    width: 6px;
+}
+
+.download-status::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 3px;
+}
+
+.download-status::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 3px;
+}
+
+.download-status::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
